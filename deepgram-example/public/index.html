@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Deepgram TTS Streaming</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <div class="card">
+            <div class="header">
+                <div class="logo">
+                    <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+                        <circle cx="16" cy="16" r="14" stroke="url(#gradient)" stroke-width="2"/>
+                        <path d="M10 16 L14 20 L22 12" stroke="url(#gradient)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <defs>
+                            <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" stop-color="#6366f1"/>
+                                <stop offset="100%" stop-color="#a855f7"/>
+                            </linearGradient>
+                        </defs>
+                    </svg>
+                </div>
+                <h1>Text to Speech</h1>
+                <p class="subtitle">Powered by Deepgram AI</p>
+            </div>
+
+            <div class="input-section">
+                <textarea 
+                    id="textInput" 
+                    placeholder="Enter text to convert to speech..."
+                    rows="4"
+                >Hello! Welcome to Deepgram's text to speech service. This audio is streaming in real-time as it's being generated.</textarea>
+            </div>
+
+            <button id="playButton" class="play-button">
+                <span class="button-content">
+                    <svg class="play-icon" width="20" height="20" viewBox="0 0 20 20" fill="currentColor">
+                        <path d="M6.3 2.841A1.5 1.5 0 004 4.11v11.78a1.5 1.5 0 002.3 1.269l9.344-5.89a1.5 1.5 0 000-2.538L6.3 2.84z"/>
+                    </svg>
+                    <span class="button-text">Play Audio</span>
+                </span>
+                <span class="loading-content">
+                    <div class="spinner"></div>
+                    <span class="button-text">Streaming...</span>
+                </span>
+            </button>
+
+            <div class="audio-visualizer" id="visualizer">
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+            </div>
+
+            <div class="status" id="status">Ready to stream</div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
