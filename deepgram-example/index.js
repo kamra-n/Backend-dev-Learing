@@ -1,4 +1,5 @@
 const express = require("express");
+const cors = require("cors");
 const { WebSocketServer } = require("ws");
 const http = require("http");
 const path = require("path");
@@ -8,11 +9,14 @@ const app = express();
 const server = http.createServer(app);
 const wss = new WebSocketServer({ server });
 
-// Serve static files from public directory
-app.use(express.static(path.join(__dirname, "public")));
+// CORS for React dev server
+app.use(cors());
+
+// Serve static files from public directory (vanilla JS version)
+
 
 // Deepgram API key - move to environment variable in production!
-const DEEPGRAM_API_KEY = process.env.DEEPGRAM_API_KEY || '';
+const DEEPGRAM_API_KEY = process.env.DEEPGRAM_API_KEY;
 
 wss.on("connection", (ws) => {
     console.log("Client connected");
