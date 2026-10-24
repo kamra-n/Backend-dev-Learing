@@ -4,10 +4,19 @@
 const elementArray = [1, 2, 3, 46, 7, 9, 0]
 
 const searchElement = (userInput, elemenlettArray) => {
+  for (let i = 0; i < elemenlettArray.length; i++) {
+    if (userInput == elemenlettArray[i]) {
+      return i;
+    }
+
+    // console.log(elemenlettArray[i]);
+  }
+
+  return -1;
 
   //todo
 
 }
 
-
-searchElement(9, searchElement);
+const result = searchElement(1, elementArray);
+console.log('result', result);
